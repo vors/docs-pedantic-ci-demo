@@ -1,0 +1,21 @@
+install:
+    - ps: |
+        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+        Install-Module platyPS -Force
+        Import-Module platyPS
+
+init:
+    - ps: git config --global core.autocrlf true
+
+build_script:
+    - ps: Import-Module -Force ./Greet.psm1
+
+test_script:
+    - ps: |
+        $ErrorActionPreference = 'Stop'
+        # Test that documentation is up-to-date
+        Update-MarkdownHelp -Path ./docs
+        $diff = git diff
+        if ($diff) {
+            throw "Help is not up-to-date, run Update-MarkdownHelp: $diff"
+        }
