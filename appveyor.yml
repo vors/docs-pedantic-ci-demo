@@ -2,7 +2,10 @@ install:
     - ps: |
         Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
         Install-Module platyPS -Force
+        Install-Module MarkdownLinkCheck -Force
         Import-Module platyPS
+        Import-Module MarkdownLinkCheck
+        npm install -g markdown-spellcheck@0.11.0
 
 init:
     - ps: git config --global core.autocrlf true
@@ -13,9 +16,19 @@ build_script:
 test_script:
     - ps: |
         $ErrorActionPreference = 'Stop'
-        # Test that documentation is up-to-date
+        
+        # 01. Test that documentation is up-to-date
         Update-MarkdownHelp -Path ./docs
         $diff = git diff
         if ($diff) {
             throw "Help is not up-to-date, run Update-MarkdownHelp: $diff"
+        }
+
+        # 02. Verify hyperlinks
+        Get-MarkdownLink -Path .\docs -BrokenOnly -ThrowOnBroken
+
+        # 03. Spellcheck
+        mdspell ./docs/**.md --ignore-numbers --ignore-acronyms --report
+        if ($LASTEXITCODE) {
+            throw "Spellcheck failed"
         }

@@ -55,7 +55,7 @@ Hello y
 Hello z
 ```
 
-Greet personz 'a'-'z' and pass the value from the pipeline
+Greet persons 'a'-'z' and pass the value from the pipeline
 
 ## PARAMETERS
 
