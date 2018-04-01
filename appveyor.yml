@@ -5,7 +5,7 @@ install:
         Install-Module MarkdownLinkCheck -Force
         Import-Module platyPS
         Import-Module MarkdownLinkCheck
-        npm install -g markdown-spellcheck@0.11.0
+    - npm install -g markdown-spellcheck@0.11.0
 
 init:
     - ps: git config --global core.autocrlf true
