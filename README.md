@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/vcookudy4mcuowdq/branch/master?svg=true)](https://ci.appveyor.com/project/vors/docs-nazi-ci-demo/branch/master)
 
-# Docs nazi CI demo
+# Docs pedantic CI demo
 
 This is a small demo repository that shows the following automatic checks in the CI:
 
