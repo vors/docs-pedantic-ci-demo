@@ -17,6 +17,7 @@ OutBuffer
 PipelineVariable
 WarningAction
 WarningVariable
+about_CommonParameters
 _CommonParameters
 System.String
 System.Object
