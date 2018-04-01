@@ -25,7 +25,10 @@ test_script:
         }
 
         # 02. Verify hyperlinks
-        Get-MarkdownLink -Path .\docs -BrokenOnly -ThrowOnBroken
+        $brokenLinks = Get-MarkdownLink -Path .\docs -BrokenOnly
+        if ($brokenLinks) {
+            throw "Found broken hyperlinks $brokenLinks"
+        }
 
         # 03. Spellcheck
         mdspell ./docs/**.md --ignore-numbers --ignore-acronyms --report
