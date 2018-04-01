@@ -104,5 +104,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Back to README](../EADME.md)
+[Back to README](../README.md)
 [How to say Hello in 20 Langages](http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/)
