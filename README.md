@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/vcookudy4mcuowdq/branch/master?svg=true)](https://ci.appveyor.com/project/vors/docs-nazi-ci-demo/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/27m02x82xceotw7d/branch/master?svg=true)](https://ci.appveyor.com/project/vors/docs-pedantic-ci-demo/branch/master)
 
 # Docs pedantic CI demo
 
