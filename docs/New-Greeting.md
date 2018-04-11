@@ -13,7 +13,7 @@ Greet people
 ## SYNTAX
 
 ```
-New-Greeting [-Name] <String> [<CommonParameters>]
+New-Greeting [-Name] <String> [[-Greeting] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,6 +59,21 @@ Greet persons 'a'-'z' and pass the value from the pipeline
 
 ## PARAMETERS
 
+### -Greeting
+Specify the greeting phrase
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: Hello
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Name of the person to greet
 
@@ -88,3 +103,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Back to README](../EADME.md)
+[How to say Hello in 20 Langages](http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/)
